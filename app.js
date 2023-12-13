@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost:27017/seuBancoDeDados', {
 });
 
 // Definir o Schema do MongoDB
-const customerSchema = new mongoose.Schema({
+const clienteSchema = new mongoose.Schema({
   nome: String,
   cpf: String,
   agencia: String,
@@ -22,7 +22,7 @@ const customerSchema = new mongoose.Schema({
   nomeBanco: String
 });
 
-const Cliente = mongoose.model('Cliente', customerSchema);
+const Cliente = mongoose.model('Cliente', clienteSchema);
 
 // Middleware
 app.use(bodyParser.json());
@@ -85,12 +85,12 @@ app.get('/clientes', async (req, res) => {
  *   post:
  *     description: Adiciona um novo cliente
  *     parameters:
- *       - name: customer
+ *       - name: cliente
  *         description: Objeto do cliente
  *         in: body
  *         required: true
  *         schema:
- *           $ref: '#/definitions/Customer'
+ *           $ref: '#/definitions/Cliente'
  *     responses:
  *       201:
  *         description: Criado com sucesso
@@ -137,12 +137,12 @@ app.get('/clientes/:id', getCliente, (req, res) => {
  *         in: path
  *         required: true
  *         type: string
- *       - name: customer
+ *       - name: cliente
  *         description: Objeto do cliente
  *         in: body
  *         required: true
  *         schema:
- *           $ref: '#/definitions/Customer'
+ *           $ref: '#/definitions/Cliente'
  *     responses:
  *       200:
  *         description: Sucesso
