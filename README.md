@@ -1,65 +1,70 @@
-# API de Gerenciamento de Clientes
+# Customer Management API
 
-Esta é uma API simples para gerenciamento de clientes com operações CRUD básicas. Utiliza o MongoDB como banco de dados não relacional e foi documentada usando o Swagger. Além disso, inclui scripts de teste de desempenho utilizando o K6.
+This is a simple API for customer management with basic CRUD operations. It uses MongoDB as a NoSQL database and is documented using Swagger. Additionally, it includes performance testing scripts using K6.
 
-## Configuração
+## Setup
 
-### Instalação
+### Installation
 
-Certifique-se de ter o Node.js e o MongoDB instalados em sua máquina.
+Make sure you have Node.js and MongoDB installed on your machine.
 
-1. Clone este repositório:
+1. Clone this repository:
 
 ````
-git clone https://github.com/seu-usuario/api-clientes.git
-cd api-clientes
+git clone https://github.com/your-username/api-customers.git
+cd api-customers
 ````
 
-# 1. Instale as dependências:
+2. Install dependencies:
+
 ````
 npm install
 ````
 
-# Configuração do Banco de dados
-Certifique-se de que o MongoDB esteja em execução. Edite o arquivo `app.js` para ajustar a URL do banco de dados de acordo com a sua configuração.
+## Database Configuration
+
+Ensure MongoDB is running. Edit the `app.js` file to adjust the database URL according to your setup.
 
 ````
 // ...
 
-mongoose.connect('mongodb://localhost:27017/seuBancoDeDados', {
+mongoose.connect('mongodb://localhost:27017/yourDatabase', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
 // ...
-
 ````
 
-# Executando a API
-Inicie o servidor:
+## Running the API
+
+Start the server:
 
 ````
 node app.js
 ````
 
-A API estará disponível em http://localhost:3000.
+The API will be available at http://localhost:3000.
 
-# Documentação Swagger
-Acesse a documentação Swagger em http://localhost:3000/api-docs para explorar e testar os endpoints da API.
+## Swagger Documentation
 
-# Testando a API com K6
-Certifique-se de ter o K6 instalado globalmente:
+Access the Swagger documentation at http://localhost:3000/api-docs to explore and test the API endpoints.
+
+## Testing the API with K6
+
+Make sure you have K6 installed globally:
 
 ````
 npm install -g k6
 ````
 
-Execute o teste de desempenho:
+Run the performance test:
+
 ````
 k6 run test.js
 ````
 
-# Observações:
-* Certifique-se de personalizar a configuração da API e do banco de dados de acordo com suas preferências específicas.
-* Adapte os scripts de teste conforme necessário, incluindo URLs, payloads e lógica de teste.
+## Notes:
+* Make sure to customize the API and database configuration according to your specific preferences.
+* Adapt the test scripts as needed, including URLs, payloads, and test logic.
 
